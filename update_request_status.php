@@ -36,9 +36,11 @@
 			echo $handle->error;
 	}
 	else {
-		$q1 = "update request set status = ".$status." where request_id = ".$request_id;		
+		$q1 = "update request set status = ".$status." where request_id = ".$request_id;	
+		$q2 = "update request set seen = 3 where request_id = ".$request_id;		
 		$result1 = $handle->query($q1);
-		if($result1)
+		$result2 = $handle->query($q2);
+		if($result1 && $result2)
 			echo "success";
 		else
 			echo $handle->error;
