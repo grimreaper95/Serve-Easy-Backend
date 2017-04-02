@@ -1,6 +1,6 @@
 <?php
 	include 'se_connect.php';
-	$provider_id = 500;//$_POST['provider_id'];
+	$provider_id = (int)$_POST['provider_id'];
 	$q1 = 'select service_id from service where provider_id = '.$provider_id;	
 	$res1 = $handle->query($q1);	
 	$cnt1 = mysqli_num_rows($res1);

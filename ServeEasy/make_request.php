@@ -1,7 +1,6 @@
 <?php
 	
 	include 'se_connect.php';
-
 	/*$service_id = 4;$consumer_id = 4;
 	$category_id=6;$quantity=5;
 	$consumer_locx=3;$consumer_locy=4;

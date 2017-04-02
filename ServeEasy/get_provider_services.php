@@ -13,16 +13,18 @@
 			$service_id = $row['service_id'];
 		}
 		array_push($output,$arr1);
-		$q2 = 'select category_name from category where service_id = '.$service_id;
+		$q2 = 'select category_name,price from category where service_id = '.$service_id;
 		$res2 = $handle->query($q2);
 		$cnt2 = mysqli_num_rows($res2);
 		if($cnt2 > 0){
 			$i = 1;
-			$arr2 = array();
+			$j = 1;
+			$arr2 = array();			
 			while($row = $res2->fetch_assoc()){				
 				$arr2['cat'.$i++] = $row['category_name'];												
-			}
-			array_push($output,$arr2);
+				$arr2['price'.$j++] = $row['price'];												
+			}												
+			array_push($output,$arr2);			
 		}		
 		echo json_encode($output);
 		

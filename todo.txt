@@ -1,12 +1,7 @@
-1. datepicker -> start from today's date->not necessary..
 2. transactions -> Zup
 3. Error -> Toast not working
 4. Trim all values and check for null values
-5. recyclerview->remove onclicklistener error
-8. coordinator layout
 10. finish activities in onPause()..
-11. delete service and categories..
-12. seekbar
-13. Ticker not working for consumerBackgroundService
 14. default image for empty list
-15. date not getting fetched in provider transactions when accepted from pending tab.
+Add progressDialog
+Broadcast receiver not working

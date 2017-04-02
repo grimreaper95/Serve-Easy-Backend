@@ -13,13 +13,14 @@
 		$arr1['provider_name'] = $row['provider_name'];
 		$arr1['provider_phno'] = $row['provider_phno'];		
 	}		
-	$q1 = "select category_id,category_name from category where service_id = '".$service_id."';";
+	$q1 = "select category_id,category_name,price from category where service_id = '".$service_id."';";
 	$result = $handle->query($q1);			
 	$arr = array();
 	while($row = $result->fetch_assoc()){		
 		$arr2 = array();
 		$arr2['category_id'] = $row['category_id'];
 		$arr2['category_name'] = $row['category_name'];	
+		$arr2['category_price'] = $row['price'];	
 		array_push($arr,$arr2);
 	}			
 	$arr1['category_list'] = $arr;	

@@ -11,7 +11,7 @@
 		$status = 2;		
 	}	
 	
-	$q1 = "select request_id,consumer_name,consumer_phno,category_name,quantity,address,provider_locx,provider_locy,consumer_locx,consumer_locy from 
+	$q1 = "select due_date,request_id,consumer_name,consumer_phno,category_name,quantity,address,provider_locx,provider_locy,consumer_locx,consumer_locy from 
 		  request join consumer on request.consumer_id = consumer.consumer_id join category 
 		  on request.category_id = category.category_id join provider on provider.provider_id = request.provider_id 
 		  and request.provider_id = ".$provider_id." and request.status = ".$status;		  
@@ -25,6 +25,7 @@
 			$arr['quantity'] = $row['quantity'];				
 			$arr['request_id'] = $row['request_id'];			
 			$arr['address'] = $row['address'];	
+			$arr['due_date'] = $row['due_date'];
 			$arr['distance'] = (int)sqrt(($row['provider_locx']-$row['consumer_locx'])*($row['provider_locx']-$row['consumer_locx'])+($row['provider_locy']-$row['consumer_locy'])*($row['provider_locy']-$row['consumer_locy']));
 			array_push($output,$arr);
 		}					
